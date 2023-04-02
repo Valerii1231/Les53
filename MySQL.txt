@@ -1,0 +1,92 @@
+INSERT INTO `shop`.`product`
+(`Title`,
+`Price`,
+`Rating`,
+`Category`,
+`Brand`)
+VALUES
+('iPhone 12',
+1100,
+4.69,
+'smartphones',
+'Apple'),
+
+('iPhone 11',
+979,
+4.69,
+'smartphones',
+'Apple'),
+
+('MacBook Air',
+1300,
+4.72,
+'laptops',
+'Apple'),
+
+('iPhone 14',
+1549,
+4.72,
+‘smartphones’,
+'Apple'),
+
+('iPhone 13',
+1349,
+4.69,
+'smartphones',
+'Apple'),
+
+('MacBook',
+950,
+4.69,
+'laptops',
+'Apple');
+
+
+
+CREATE TABLE `customer` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `productID` mediumint NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+INSERT INTO `shop`.`customer`
+(`ID`,
+`name`,
+`productID`)
+VALUES
+(`ID`,
+`name`,
+`productID`)
+VALUES
+(1,
+'Mike',
+9);
+INSERT INTO `shop`.`customer`
+(`name`,
+`productID`)
+VALUES
+('Bob',
+5),
+('Nikola',
+11),
+('Mike',
+14),
+('Nikola',
+3),
+('Mike',
+8),
+('Mike',
+9);
+
+
+
+2:   SELECT Category, COUNT(Title) FROM product GROUP BY Category;
+3:   SELECT Category, COUNT(DISTINCT Brand) FROM product GROUP BY Category;
+4:   SELECT name, COUNT(*) AS count FROM customer GROUP BY name;
+5:   SELECT name, COUNT(*) as Quantity FROM customer GROUP BY name
+ORDER BY Quantity DESC;
+6:   SELECT Category, Title, Price FROM customer JOIN product ON customer.productID=product.id ORDER BY Category, Price DESC;
+
+
+
